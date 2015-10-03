@@ -29,7 +29,7 @@ JIT은 단순히 "Just In Time"의 약자이다. 하지만 이 자체는 별 도
 
 "JIT"의 역사적인 용어 사용은 어떻게 된 걸까? 운이 좋게도 Calgary대학의 John Aycock이 쓴 "A Brief Hitory of Just-In-Time"(구글에 검색해보시길 PDF로 다운로드가 가능하다.)
 에서  JIT의 기술을 역사적인 관점에서 보고 있다. Aycock의 논문에 따르면 최초로 프로그램 실행시간에 코드 생성과 실행을 언급한 것은 1960년 McCarthy의
-LISP 논문이다. 나중에 Thomson의 1968년에 regex 논문에서 이것은 더욱더 분명했다.(regexex는 실시간으로 기계어 코드로 컴파일해서 실행하는 것 이다. )
+LISP 논문이다. 나중에 Thomson의 1968년에 regex 논문에서 이것은 더욱더 분명했다.(regexes는 실시간으로 기계어 코드로 컴파일해서 실행하는 것 이다. )
 
 
 JIT이란 용어는 Java를 위해 제임스 고슬링이 컴퓨터 용어로 가져왔다. Aycock 는 고슬링이 [제조의 도메인의 용어](https://en.wikipedia.org/wiki/Just-in-Time_Manufacturing) 를 빌려 와 그것을 1990 년대 초부터 사용하기 시작 했다고 언급하고 있다.
