@@ -24,7 +24,8 @@ categories: "Assembly"
 
 기본으로 돌아가보자. 새로 배우는 학생들에게는 스택을 쌓인 접시에 비유하곤 한다. 당신은 접시를 접시 더미에 올릴 거나 접시 더미에서 빼낸다. 스택의 맨 위는 당신이 새로운 접시를 올릴 자리이거나 빼올 자리이다.
 
-<center>![plates](/images/plates.png)</center>
+![plates](/images/plates.png)
+
 ## 하드웨어 스택 ##
 
 컴퓨터에서 스택은 보통 메모리의 구역으로 특별하게 다루어진다. 추상적인 느낌에서 적용해보자면, 여러분은 스택의 맨 윗 부분에 데이터를 밀어넣고 맨 윗부분에서 꺼내온다. 다만 이것은 메모리 상에서 스택의 맨 윗 부분이 어디인지는 따지지 않는다는 것은 명심하라.
@@ -34,7 +35,7 @@ categories: "Assembly"
 혼돈의 원천를 사실에 비추어 볼 때, 인텔의 x86 구조는 "아래로 향한다". 어딘지는 모르겠지만 임의의 주소지부터 더 낮은 주소지로 아래로 자란다.
 보통은 이렇게 생겨먹었다:
 
-<center>![stack1](/images/stack1.png)</center>
+![stack1](/images/stack1.png)
 
 그러므로 우리가 "스택의 맨 위"를 x86에서 말할 때는 사실은 스택이 차지하고 있는 공간의 메모리 주소 중 가장 낮은 곳을 말하는 것이다.
 이게 몇몇 사람들에게는 부자연스러울 수 있다. 위 에 있는 그림을 계속보다 보면 익숙해질 것 이다.
@@ -45,7 +46,7 @@ categories: "Assembly"
 
 x86구조에서 스택과 함께 작동하는 특별하 레지스터가 예약되어 있다. 바로 ESP(Extended Stack Pointer)이다. ESP는 그 의미처럼 항상 스택의 상단부에 있다.
 
-<center>![stack2](/images/stack2.png)</center>
+![stack2](/images/stack2.png)
 
 이 그림에서 `0x9080ABCC`는 스택의 최상단 부이다. "foo"의 일부와 ESP는 `0x9080ABCC` 메모리 주소 지점을 가지고 있다. 즉 가리키고 있다는 말이다.
 
@@ -64,7 +65,7 @@ mov [esp], eax
 
 이전 그림에 이어서 진행하자면 스택에 `push`가 된 후, `eax`는 `0xDEADBEEF`의 값을 가지고 있다.
 
-<center> ![stack3](/images/stack3.png) </center>
+![stack3](/images/stack3.png)
 
 비슷하게  `pop` 명령어는 스택의 맨 상단부의 값을 없애고 스택 포인터를 증가시킨다.
 ```
@@ -80,7 +81,7 @@ add esp, 4
 
 그럼 다시, 이전 그림에서(`push`를 한 직후) 계속 이어가서, `pop eax`는 다음과 같이 행동한다.
 
-<center>![stack4](/images/stack4.png)</center>
+![stack4](/images/stack4.png)
 
 그리고 `0xDEADBEEF`는 `eax`에 쓰여질 것이다. 우리가 따로 덮어 쓰지 않는 한 `0xDEADBEEF`는 계속 `0x9080ABC8`지점에 계속 머물러있다는 점 또한 알아둬야 한다.
 
@@ -109,7 +110,7 @@ int main()
 ```
 `foobar`에 전달되는 매개변수와 함수의 지역변수는 `foobar`이 호출된 스택 안에 저장된다. 스택안의 데이터 집합을 *프레임* 이라고 부른다. `return` 문이 실행되기 전에 `foobar`의 스택 프레임은 다음과 같다.
 
-<center>![stackframe1](/images/stackframe1.png)</center>
+![stackframe1](/images/stackframe1.png)
 
 초록색 영역은 호출 규약에 따라 스택에 집어넣어진 부분이고, 파란 영역은 `foobar` 함수 그 자체이다. `gcc`로 컴파일해서 어셈블리를 다음과 같이 하면 된다.
 
