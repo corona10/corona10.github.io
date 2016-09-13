@@ -64,7 +64,7 @@ mov [esp], eax
 
 이전 그림에 이어서 진행하자면 스택에 `push`가 된 후, `eax`는 `0xDEADBEEF`의 값을 가지고 있다.
 
-<center>![stack3](/images/stack3.png)</center>
+<center> ![stack3](/images/stack3.png) </center>
 
 비슷하게  `pop` 명령어는 스택의 맨 상단부의 값을 없애고 스택 포인터를 증가시킨다.
 ```
